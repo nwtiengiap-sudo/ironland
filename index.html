@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iron Land - Rope Access & Rescue Training</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <style>
         :root { --gold: #d4af37; --deep-black: #050505; }
-        
-        /* Font Cambodia */
-        [lang="km"] { font-family: 'Kantumruy Pro', 'Montserrat', sans-serif; }
+        [lang="km"] { font-family: 'Kantumruy Pro', sans-serif; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--deep-black); color: white; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-        
         .bg-iron {
             background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
                               url('https://images.unsplash.com/photo-1516139008210-96e45dccd83b?q=80&w=2070&auto=format&fit=crop');
@@ -25,34 +20,18 @@
         .gold-text { color: var(--gold); }
         .gold-border { border-color: var(--gold); }
         .gold-bg { background-color: var(--gold); }
-        
-        .reveal-brand-box { animation: revealBox 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-        .reveal-slogan { animation: revealSlogan 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards; opacity: 0; }
-        .reveal-content { animation: fadeIn 1.2s ease-out 1.2s forwards; opacity: 0; }
-
-        @keyframes revealBox { from { opacity: 0; transform: scale(0.95) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-        @keyframes revealSlogan { from { opacity: 0; letter-spacing: 0.1em; transform: translateY(10px); } to { opacity: 1; letter-spacing: 0.5em; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; }
-        .glass-card:hover { border-color: rgba(212, 175, 55, 0.5); transform: translateY(-5px); }
-
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .glass-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .lang-btn.active { background-color: var(--gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-
         #contactModal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(15px); align-items: center; justify-content: center; padding: 20px; }
-        #contactModal.active { display: flex; animation: fadeIn 0.3s ease; }
-        
-        .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; transition: all 0.3s; width: 100%; padding: 1rem; border-radius: 0.75rem; font-size: 0.875rem; }
-        .form-input:focus { border-color: var(--gold); outline: none; background: rgba(255, 255, 255, 0.1); }
-        
-        select.form-input option { background-color: #1a1a1a; color: white; }
+        #contactModal.active { display: flex; }
+        .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; width: 100%; padding: 1rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body id="body-tag">
-
     <div class="bg-iron"></div>
 
-    <header class="p-6 md:p-10 flex flex-col sm:flex-row justify-between sm:justify-end items-center gap-6 max-w-7xl mx-auto w-full reveal-content">
+    <header class="p-6 md:p-10 flex flex-col sm:flex-row justify-between sm:justify-end items-center gap-6 max-w-7xl mx-auto w-full">
         <div class="flex items-center space-x-4">
             <a href="https://www.facebook.com/profile.php?id=61584757420201" target="_blank" class="p-3 bg-white/5 rounded-full hover:gold-bg transition-all border border-white/5 group">
                 <img src="FB.png" alt="FB" class="w-5 h-5 object-contain group-hover:brightness-0">
@@ -62,39 +41,88 @@
             </a>
         </div>
         <div class="flex items-center space-x-1 bg-white/5 p-1 rounded-full border border-white/10">
-            <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">VI</button>
-            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">EN</button>
-            <button onclick="setLanguage('km')" id="btn-km" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">KH</button>
+            <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-3 py-1.5 rounded-full text-[10px] font-bold">VI</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold">EN</button>
+            <button onclick="setLanguage('km')" id="btn-km" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold">KH</button>
         </div>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center px-6 text-center">
-        <div class="space-y-6 md:space-y-8 max-w-5xl">
-            <div class="reveal-brand-box inline-block border-[3px] md:border-[6px] gold-border px-8 py-3 md:px-16 md:py-6">
-                <h1 class="text-4xl md:text-8xl font-black uppercase tracking-[0.1em] gold-text">IRON LAND</h1>
+        <div class="mb-12">
+            <div class="inline-block border-[4px] gold-border px-10 py-4 md:px-20 md:py-8 mb-6">
+                <h1 class="text-5xl md:text-8xl font-black gold-text tracking-tighter">IRON LAND</h1>
             </div>
-            <div class="reveal-slogan">
-                <p id="slogan" class="text-sm md:text-2xl text-white font-light uppercase italic">Built Unbreakable</p>
-            </div>
-            <div class="reveal-content w-16 h-0.5 gold-bg mx-auto my-6"></div>
-            <div class="reveal-content max-w-2xl mx-auto">
-                <p id="description" class="text-sm md:text-lg text-gray-300 font-light leading-relaxed">
-                    Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.
-                </p>
-            </div>
-            <div class="reveal-content inline-flex items-center space-x-3 bg-white/5 px-5 py-2 rounded-full border border-white/10">
+            <p id="slogan" class="text-base md:text-2xl text-white font-light uppercase italic tracking-[0.4em] mb-8">Built Unbreakable</p>
+            <p id="description" class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">Loading...</p>
+            <div class="inline-flex items-center space-x-3 bg-white/5 px-5 py-2 rounded-full border border-white/10">
                 <span class="relative flex h-2 w-2"><span class="animate-ping absolute h-full w-full rounded-full gold-bg opacity-75"></span><span class="relative rounded-full h-2 w-2 gold-bg"></span></span>
-                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400">Đang nâng cấp hệ thống</span>
+                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400">...</span>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 w-full max-w-7xl reveal-content">
-            <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center">
-                <i data-lucide="map-pin" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-address" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold">Cơ sở đào tạo</h3>
-                <p class="text-xs md:text-sm text-gray-200" id="val-address">45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl px-4">
+            <div class="glass-card p-6 rounded-2xl">
+                <i data-lucide="map-pin" class="gold-text w-7 h-7 mb-4"></i>
+                <h3 id="label-address" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+                <p id="val-address" class="text-xs text-gray-200"></p>
             </div>
-            <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center">
-                <i data-lucide="phone-call" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-hotline" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold">Hotline</h3>
-                <p class="text-lg md:text-xl font-extrabold gold-text
+            <div class="glass-card p-6 rounded-2xl">
+                <i data-lucide="phone-call" class="gold-text w-7 h-7 mb-4"></i>
+                <h3 id="label-hotline" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+                <p class="text-xl font-black gold-text mb-3">+84 907 713 137</p>
+                <div class="flex space-x-4"><a href="https://wa.me/84907713137" class="hover:text-green-500"><i data-lucide="message-square" class="w-5 h-5"></i></a><a href="https://t.me/+84907713137" class="hover:text-blue-400"><i data-lucide="send" class="w-5 h-5"></i></a></div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <i data-lucide="mail" class="gold-text w-7 h-7 mb-4"></i>
+                <h3 id="label-email" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+                <p class="text-xs font-semibold text-gray-200 uppercase tracking-tighter">contact@ironland.vn</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <i data-lucide="award" class="gold-text w-7 h-7 mb-4"></i>
+                <h3 id="label-legal" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+                <p class="text-[10px] text-gray-200 italic mb-1">MST: 0319429227</p>
+                <p class="text-[9px] text-gray-600 font-black uppercase">IRON LAND JSC</p>
+            </div>
+        </div>
+
+        <button onclick="toggleModal()" class="mt-16 mb-20 gold-bg text-black font-black py-5 px-14 rounded-full flex items-center space-x-4 shadow-2xl group active:scale-95 transition-all">
+            <span id="btn-cta" class="tracking-widest text-sm uppercase font-bold"></span>
+            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
+        </button>
+    </main>
+
+    <div id="contactModal" onclick="if(event.target === this) toggleModal()">
+        <div class="glass-card w-full max-w-lg p-10 rounded-3xl relative !justify-start !text-left">
+            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white"><i data-lucide="x" class="w-7 h-7"></i></button>
+            <h2 id="modal-title" class="text-2xl font-black gold-text mb-2 uppercase"></h2>
+            <p id="modal-subtitle" class="text-gray-400 text-[10px] mb-8 uppercase tracking-widest"></p>
+            <form onsubmit="handleSubmit(event)" class="space-y-4 w-full">
+                <input type="text" id="form-name" required class="form-input">
+                <input type="tel" id="form-phone" required class="form-input">
+                <select id="form-service" class="form-input appearance-none"></select>
+                <button type="submit" id="submit-btn" class="gold-bg w-full py-4 rounded-xl text-black font-black uppercase tracking-widest hover:bg-white transition-all"></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const TELEGRAM_BOT_TOKEN = '7551259136:AAFvJhVw6d1ejrr9XyNnENw8OrRaOe2Ea9g';
+        const TELEGRAM_CHAT_ID = '1299446511';
+        const translations = {
+            vi: {
+                desc: "Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.",
+                status: "Đang nâng cấp hệ thống", addr: "Cơ sở đào tạo", addrVal: "45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM",
+                hotline: "Hotline", email: "Email liên hệ", legal: "Thông tin pháp lý", cta: "Đăng ký tư vấn ngay",
+                mTitle: "Đăng ký tư vấn", mSub: "Phản hồi trong 24h", pName: "Họ và tên *", pPhone: "Số điện thoại *",
+                services: ["Đào tạo Rope Access", "Đào tạo Cứu hộ", "Tư vấn Kỹ thuật"], btnSend: "GỬI YÊU CẦU", success: "Thành công!"
+            },
+            en: {
+                desc: "Our website is undergoing upgrades. Iron Land will return soon with international standard Rope Access and Rescue training courses.",
+                status: "System Upgrading", addr: "Training Facility", addrVal: "45 Nguyen Thi Don St, Cu Chi, HCMC",
+                hotline: "Hotline", email: "Email Support", legal: "Legal Info", cta: "Request Consultation",
+                mTitle: "Request Info", mSub: "Response within 24h", pName: "Full Name *", pPhone: "Phone Number *",
+                services: ["Rope Access Training", "Rescue Training", "Technical Consulting"], btnSend: "SEND NOW", success: "Success!"
+            },
+            km: {
+                desc: "គេហទំព័ររបស់យើងកំពុងត្រូវបានកែលម្អ។ Iron Land នឹងត្រលប់មកវិញឆាប់ៗនេះ ជាមួយនឹងវគ្គបណ្តុះបណ្តាល Rope Access និង Rescue កម្រិតស្តង់ដារអន្តរជាតិ។",
+                status: "កំពុងកែលម្អប្រព័ន្ធ", addr:
