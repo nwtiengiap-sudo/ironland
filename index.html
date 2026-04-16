@@ -6,14 +6,14 @@
     <title>Iron Land - Rope Access & Rescue Training</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Freehand&family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         :root { --gold: #d4af37; --deep-black: #050505; }
         
-        /* Hỗ trợ font chữ Cambodia (Kantumruy Pro) khi chuyển vùng */
-        [lang="km"] { font-family: 'Kantumruy Pro', sans-serif; }
+        /* Font Cambodia */
+        [lang="km"] { font-family: 'Kantumruy Pro', 'Montserrat', sans-serif; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--deep-black); color: white; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         
         .bg-iron {
@@ -26,7 +26,7 @@
         .gold-border { border-color: var(--gold); }
         .gold-bg { background-color: var(--gold); }
         
-        .reveal-brand-box { animation: revealBox 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+        .reveal-brand-box { animation: revealBox 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .reveal-slogan { animation: revealSlogan 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards; opacity: 0; }
         .reveal-content { animation: fadeIn 1.2s ease-out 1.2s forwards; opacity: 0; }
 
@@ -45,7 +45,6 @@
         .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; transition: all 0.3s; width: 100%; padding: 1rem; border-radius: 0.75rem; font-size: 0.875rem; }
         .form-input:focus { border-color: var(--gold); outline: none; background: rgba(255, 255, 255, 0.1); }
         
-        /* Style cho Dropdown mượt mà hơn */
         select.form-input option { background-color: #1a1a1a; color: white; }
     </style>
 </head>
@@ -54,18 +53,18 @@
     <div class="bg-iron"></div>
 
     <header class="p-6 md:p-10 flex flex-col sm:flex-row justify-between sm:justify-end items-center gap-6 max-w-7xl mx-auto w-full reveal-content">
-        <div class="flex items-center space-x-4 mb-4 sm:mb-0">
+        <div class="flex items-center space-x-4">
             <a href="https://www.facebook.com/profile.php?id=61584757420201" target="_blank" class="p-3 bg-white/5 rounded-full hover:gold-bg transition-all border border-white/5 group">
-                <img src="FB.png" alt="FB" class="w-5 h-5 object-contain transition-all group-hover:brightness-0">
+                <img src="FB.png" alt="FB" class="w-5 h-5 object-contain group-hover:brightness-0">
             </a>
             <a href="https://www.tiktok.com/@iron.land.vraa" target="_blank" class="p-3 bg-white/5 rounded-full hover:gold-bg transition-all border border-white/5 group">
-                <img src="TIK.png" alt="TIK" class="w-5 h-5 object-contain transition-all group-hover:brightness-0">
+                <img src="TIK.png" alt="TIK" class="w-5 h-5 object-contain group-hover:brightness-0">
             </a>
         </div>
         <div class="flex items-center space-x-1 bg-white/5 p-1 rounded-full border border-white/10">
-            <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-3 py-1.5 rounded-full text-[10px] font-bold transition-all uppercase tracking-widest">VI</button>
-            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold transition-all uppercase tracking-widest">EN</button>
-            <button onclick="setLanguage('km')" id="btn-km" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold transition-all uppercase tracking-widest">KH</button>
+            <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">VI</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">EN</button>
+            <button onclick="setLanguage('km')" id="btn-km" class="lang-btn px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">KH</button>
         </div>
     </header>
 
@@ -79,185 +78,23 @@
             </div>
             <div class="reveal-content w-16 h-0.5 gold-bg mx-auto my-6"></div>
             <div class="reveal-content max-w-2xl mx-auto">
-                <p id="description" class="text-sm md:text-lg text-gray-300 font-light leading-relaxed"></p>
+                <p id="description" class="text-sm md:text-lg text-gray-300 font-light leading-relaxed">
+                    Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.
+                </p>
             </div>
             <div class="reveal-content inline-flex items-center space-x-3 bg-white/5 px-5 py-2 rounded-full border border-white/10">
                 <span class="relative flex h-2 w-2"><span class="animate-ping absolute h-full w-full rounded-full gold-bg opacity-75"></span><span class="relative rounded-full h-2 w-2 gold-bg"></span></span>
-                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400"></span>
+                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400">Đang nâng cấp hệ thống</span>
             </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 w-full max-w-7xl reveal-content">
             <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center">
                 <i data-lucide="map-pin" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-address" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold"></h3>
-                <p class="text-xs md:text-sm text-gray-200" id="val-address"></p>
+                <h3 id="label-address" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold">Cơ sở đào tạo</h3>
+                <p class="text-xs md:text-sm text-gray-200" id="val-address">45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM</p>
             </div>
             <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center">
                 <i data-lucide="phone-call" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-hotline" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold"></h3>
-                <p class="text-lg md:text-xl font-extrabold gold-text tracking-widest mb-3">+84 907 713 137</p>
-                <div class="flex space-x-6">
-                    <a href="https://wa.me/84907713137" target="_blank" class="hover:text-[#25D366] transition-all"><i data-lucide="message-square" class="w-6 h-6"></i></a>
-                    <a href="https://t.me/+84907713137" target="_blank" class="hover:text-[#0088cc] transition-all"><i data-lucide="send" class="w-6 h-6"></i></a>
-                </div>
-            </div>
-            <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center">
-                <i data-lucide="mail" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-email" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold"></h3>
-                <p class="text-xs md:text-sm font-semibold text-gray-200">contact@ironland.vn</p>
-            </div>
-            <div class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center">
-                <i data-lucide="award" class="gold-text w-6 h-6 mb-4"></i>
-                <h3 id="label-legal" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold"></h3>
-                <p class="text-[11px] text-gray-200 italic">MST: 0319429227</p>
-            </div>
-        </div>
-
-        <div class="mt-12 mb-20 reveal-content">
-            <button onclick="toggleModal()" class="gold-bg hover:bg-white text-black font-extrabold py-4 px-10 md:py-5 md:px-14 rounded-full flex items-center space-x-4 transition-all shadow-2xl group">
-                <span id="btn-cta" class="tracking-widest text-xs md:text-base uppercase"></span>
-                <i data-lucide="arrow-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform"></i>
-            </button>
-        </div>
-    </main>
-
-    <div id="contactModal" onclick="if(event.target === this) toggleModal()">
-        <div class="glass-card w-full max-w-lg p-8 md:p-12 rounded-2xl relative border-white/20">
-            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white"><i data-lucide="x" class="w-7 h-7"></i></button>
-            <h2 id="modal-title" class="text-2xl font-black gold-text mb-2 uppercase text-center"></h2>
-            <p id="modal-subtitle" class="text-gray-400 text-xs text-center mb-8 uppercase tracking-widest"></p>
-            
-            <form onsubmit="handleSubmit(event)" class="space-y-4">
-                <input type="text" id="form-name" placeholder="" required class="form-input">
-                <input type="tel" id="form-phone" placeholder="" required class="form-input">
-                
-                <div class="relative">
-                    <select id="form-service" class="form-input appearance-none cursor-pointer">
-                        </select>
-                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </div>
-                </div>
-
-                <button type="submit" id="submit-btn" class="gold-bg w-full py-4 rounded-lg text-black font-black uppercase tracking-widest hover:bg-white transition-all"></button>
-            </form>
-        </div>
-    </div>
-
-    <footer class="p-8 text-center border-t border-white/5 bg-black/20">
-        <p class="text-gray-600 text-[9px] md:text-[10px] tracking-[0.4em] uppercase">© 2024 IRON LAND JOINT STOCK COMPANY.</p>
-    </footer>
-
-    <script>
-        const TELEGRAM_BOT_TOKEN = '7551259136:AAFvJhVw6d1ejrr9XyNnENw8OrRaOe2Ea9g';
-        const TELEGRAM_CHAT_ID = '1299446511';
-
-        const translations = {
-            vi: {
-                desc: "Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.",
-                status: "Đang nâng cấp hệ thống",
-                addr: "Cơ sở đào tạo",
-                addrVal: "45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM",
-                hotline: "Hotline", email: "Email", legal: "Pháp lý",
-                cta: "Đăng ký nhận tư vấn",
-                mTitle: "Đăng ký tư vấn", mSub: "Chúng tôi sẽ phản hồi trong 24h",
-                pName: "Họ và tên *", pPhone: "Số điện thoại *",
-                services: ["Đào tạo Rope Access (IRATA/VRAA)", "Đào tạo Cứu hộ (Rescue Training)", "Dịch vụ Kỹ thuật & Tư vấn an toàn"],
-                btnSend: "GỬI YÊU CẦU",
-                success: "Gửi thành công! Chúng tôi sẽ liên hệ sớm."
-            },
-            en: {
-                desc: "Our website is undergoing upgrades. Iron Land will return soon with international standard Rope Access and Rescue training courses.",
-                status: "System Upgrading",
-                addr: "Training Facility",
-                addrVal: "45 Nguyen Thi Don St, Cu Chi, HCMC",
-                hotline: "Hotline", email: "Email", legal: "Legal Info",
-                cta: "Request Consultation",
-                mTitle: "Consultation Request", mSub: "We will respond within 24h",
-                pName: "Full Name *", pPhone: "Phone Number *",
-                services: ["Rope Access Training (IRATA/VRAA)", "Rescue Training", "Technical & Safety Consulting"],
-                btnSend: "SEND REQUEST",
-                success: "Success! We will contact you soon."
-            },
-            km: {
-                desc: "គេហទំព័ររបស់យើងកំពុងត្រូវបានកែលម្អ។ Iron Land នឹងត្រលប់មកវិញឆាប់ៗនេះ ជាមួយនឹងវគ្គបណ្តុះបណ្តាល Rope Access និង Rescue កម្រិតស្តង់ដារអន្តរជាតិ។",
-                status: "កំពុងកែលម្អប្រព័ន្ធ",
-                addr: "ទីតាំងបណ្តុះបណ្តាល",
-                addrVal: "ផ្លូវ ៤៥ ង្វៀនធីដន, គូជី, ហូជីមិញ",
-                hotline: "លេខទូរស័ព្ទ", email: "អ៊ីមែល", legal: "ច្បាប់",
-                cta: "ចុះឈ្មោះពិគ្រោះយោបល់",
-                mTitle: "ពាក្យសុំពិគ្រោះយោបល់", mSub: "យើងនឹងឆ្លើយតបក្នុងរយៈពេល ២៤ ម៉ោង",
-                pName: "ឈ្មោះពេញ *", pPhone: "លេខទូរស័ព្ទ *",
-                services: ["ការបណ្តុះបណ្តាល Rope Access", "ការបណ្តុះបណ្តាលការសង្គ្រោះ", "សេវាកម្មប្រឹក្សាបច្ចេកទេស"],
-                btnSend: "បញ្ជូនព័ត៌មាន",
-                success: "ជោគជ័យ! យើងនឹងទាក់ទងទៅអ្នកវិញក្នុងពេលឆាប់ៗ។"
-            }
-        };
-
-        function setLanguage(lang) {
-            const t = translations[lang];
-            document.getElementById('body-tag').setAttribute('lang', lang);
-            document.getElementById('description').innerText = t.desc;
-            document.getElementById('status-text').innerText = t.status;
-            document.getElementById('label-address').innerText = t.addr;
-            document.getElementById('val-address').innerText = t.addrVal;
-            document.getElementById('label-hotline').innerText = t.hotline;
-            document.getElementById('label-email').innerText = t.email;
-            document.getElementById('label-legal').innerText = t.legal;
-            document.getElementById('btn-cta').innerText = t.cta;
-            document.getElementById('modal-title').innerText = t.mTitle;
-            document.getElementById('modal-subtitle').innerText = t.mSub;
-            document.getElementById('form-name').placeholder = t.pName;
-            document.getElementById('form-phone').placeholder = t.pPhone;
-            document.getElementById('submit-btn').innerText = t.btnSend;
-
-            // Update Dropdown Services
-            const select = document.getElementById('form-service');
-            select.innerHTML = '';
-            t.services.forEach(s => {
-                const opt = document.createElement('option');
-                opt.value = s;
-                opt.innerText = s;
-                select.appendChild(opt);
-            });
-
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${lang}`).classList.add('active');
-            localStorage.setItem('ironland_lang_pref', lang);
-            lucide.createIcons(); // Re-render icons if needed
-        }
-
-        function toggleModal() {
-            const m = document.getElementById('contactModal');
-            m.classList.toggle('active');
-            document.body.style.overflow = m.classList.contains('active') ? 'hidden' : '';
-        }
-
-        async function handleSubmit(e) {
-            e.preventDefault();
-            const lang = localStorage.getItem('ironland_lang_pref') || 'vi';
-            const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
-            const service = document.getElementById('form-service').value;
-            const btn = document.getElementById('submit-btn');
-
-            const message = `🔔 *YÊU CẦU TỪ WEB (${lang.toUpperCase()})*\n━━━━━━━━━━\n👤 Khách: ${name}\n📞 SĐT: ${phone}\n🛠 Dịch vụ: ${service}`;
-
-            btn.innerText = "...";
-            btn.disabled = true;
-
-            try {
-                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' })
-                });
-                alert(translations[lang].success);
-                toggleModal();
-                e.target.reset();
-            } catch (err) {
-                alert("Error! Please call Hotline.");
-            } finally {
-                btn.innerText = translations[lang].btnSend;
-                btn.disabled = false;
+                <h3 id="label-hotline" class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-bold">Hotline</h3>
+                <p class="text-lg md:text-xl font-extrabold gold-text
