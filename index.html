@@ -6,7 +6,6 @@
     <title>Iron Land - Rope Access & Rescue Training</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root { --gold: #d4af37; --deep-black: #050505; }
         [lang="km"] { font-family: 'Kantumruy Pro', sans-serif; }
@@ -20,7 +19,7 @@
         .gold-text { color: var(--gold); }
         .gold-border { border-color: var(--gold); }
         .gold-bg { background-color: var(--gold); }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         .glass-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .lang-btn.active { background-color: var(--gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
         #contactModal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(15px); align-items: center; justify-content: center; padding: 20px; }
@@ -53,66 +52,74 @@
                 <h1 class="text-5xl md:text-8xl font-black gold-text tracking-tighter">IRON LAND</h1>
             </div>
             <p id="slogan" class="text-base md:text-2xl text-white font-light uppercase italic tracking-[0.4em] mb-8">Built Unbreakable</p>
-            <p id="description" class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">Loading...</p>
+            <p id="description" class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.</p>
             <div class="inline-flex items-center space-x-3 bg-white/5 px-5 py-2 rounded-full border border-white/10">
                 <span class="relative flex h-2 w-2"><span class="animate-ping absolute h-full w-full rounded-full gold-bg opacity-75"></span><span class="relative rounded-full h-2 w-2 gold-bg"></span></span>
-                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400">...</span>
+                <span id="status-text" class="text-[10px] font-semibold uppercase tracking-[0.3em] text-gray-400">Đang nâng cấp hệ thống</span>
             </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl px-4">
             <div class="glass-card p-6 rounded-2xl">
-                <i data-lucide="map-pin" class="gold-text w-7 h-7 mb-4"></i>
-                <h3 id="label-address" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
-                <p id="val-address" class="text-xs text-gray-200"></p>
+                <svg class="gold-text w-7 h-7 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <h3 id="label-address" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Cơ sở đào tạo</h3>
+                <p id="val-address" class="text-xs text-gray-200">45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM</p>
             </div>
             <div class="glass-card p-6 rounded-2xl">
-                <i data-lucide="phone-call" class="gold-text w-7 h-7 mb-4"></i>
-                <h3 id="label-hotline" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+                <svg class="gold-text w-7 h-7 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <h3 id="label-hotline" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Hotline</h3>
                 <p class="text-xl font-black gold-text mb-3">+84 907 713 137</p>
-                <div class="flex space-x-4"><a href="https://wa.me/84907713137" class="hover:text-green-500"><i data-lucide="message-square" class="w-5 h-5"></i></a><a href="https://t.me/+84907713137" class="hover:text-blue-400"><i data-lucide="send" class="w-5 h-5"></i></a></div>
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/84907713137" class="hover:text-green-500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.38 8.38 0 0 1 3.8.9L22 4Z"></path></svg></a>
+                    <a href="https://t.me/+84907713137" class="hover:text-blue-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></a>
+                </div>
             </div>
             <div class="glass-card p-6 rounded-2xl">
-                <i data-lucide="mail" class="gold-text w-7 h-7 mb-4"></i>
-                <h3 id="label-email" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
-                <p class="text-xs font-semibold text-gray-200 uppercase tracking-tighter">contact@ironland.vn</p>
+                <svg class="gold-text w-7 h-7 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <h3 id="label-email" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Email hỗ trợ</h3>
+                <p class="text-xs font-semibold text-gray-200">contact@ironland.vn</p>
             </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <i data-lucide="award" class="gold-text w-7 h-7 mb-4"></i>
-                <h3 id="label-legal" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold"></h3>
+            <div class="glass-card p-6 rounded-2xl">
+                <svg class="gold-text w-7 h-7 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <h3 id="label-legal" class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Pháp lý</h3>
                 <p class="text-[10px] text-gray-200 italic mb-1">MST: 0319429227</p>
                 <p class="text-[9px] text-gray-600 font-black uppercase">IRON LAND JSC</p>
             </div>
         </div>
 
         <button onclick="toggleModal()" class="mt-16 mb-20 gold-bg text-black font-black py-5 px-14 rounded-full flex items-center space-x-4 shadow-2xl group active:scale-95 transition-all">
-            <span id="btn-cta" class="tracking-widest text-sm uppercase font-bold"></span>
-            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
+            <span id="btn-cta" class="tracking-widest text-sm uppercase font-bold">ĐĂNG KÝ TƯ VẤN NGAY</span>
+            <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
     </main>
 
     <div id="contactModal" onclick="if(event.target === this) toggleModal()">
         <div class="glass-card w-full max-w-lg p-10 rounded-3xl relative !justify-start !text-left">
-            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white"><i data-lucide="x" class="w-7 h-7"></i></button>
-            <h2 id="modal-title" class="text-2xl font-black gold-text mb-2 uppercase"></h2>
-            <p id="modal-subtitle" class="text-gray-400 text-[10px] mb-8 uppercase tracking-widest"></p>
-            <form onsubmit="handleSubmit(event)" class="space-y-4 w-full">
-                <input type="text" id="form-name" required class="form-input">
-                <input type="tel" id="form-phone" required class="form-input">
-                <select id="form-service" class="form-input appearance-none"></select>
-                <button type="submit" id="submit-btn" class="gold-bg w-full py-4 rounded-xl text-black font-black uppercase tracking-widest hover:bg-white transition-all"></button>
+            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <h2 id="modal-title" class="text-2xl font-black gold-text mb-2 uppercase">Đăng ký tư vấn</h2>
+            <p id="modal-subtitle" class="text-gray-400 text-[10px] mb-8 uppercase tracking-widest">Phản hồi trong 24h</p>
+            <form onsubmit="handleSubmit(event)" class="space-y-4 w-full text-black">
+                <input type="text" id="form-name" placeholder="Họ và tên" required class="form-input">
+                <input type="tel" id="form-phone" placeholder="Số điện thoại" required class="form-input">
+                <select id="form-service" class="form-input appearance-none text-gray-400"></select>
+                <button type="submit" id="submit-btn" class="gold-bg w-full py-4 rounded-xl text-black font-black uppercase tracking-widest hover:bg-white transition-all">GỬI YÊU CẦU</button>
             </form>
         </div>
     </div>
 
+    <footer class="p-8 text-center border-t border-white/5 bg-black/20">
+        <p class="text-gray-600 text-[9px] md:text-[10px] tracking-[0.4em] uppercase">© 2024 IRON LAND JOINT STOCK COMPANY.</p>
+    </footer>
+
     <script>
         const TELEGRAM_BOT_TOKEN = '7551259136:AAFvJhVw6d1ejrr9XyNnENw8OrRaOe2Ea9g';
         const TELEGRAM_CHAT_ID = '1299446511';
+        
         const translations = {
             vi: {
                 desc: "Website đang được nâng cấp. Iron Land sẽ sớm trở lại với các khóa đào tạo Tiếp cận dây và Cứu hộ tiêu chuẩn quốc tế.",
                 status: "Đang nâng cấp hệ thống", addr: "Cơ sở đào tạo", addrVal: "45 Nguyễn Thị Dòn, Nhuận Đức, Củ Chi, TP. HCM",
-                hotline: "Hotline", email: "Email liên hệ", legal: "Thông tin pháp lý", cta: "Đăng ký tư vấn ngay",
+                hotline: "Hotline", email: "Email hỗ trợ", legal: "Pháp lý", cta: "Đăng ký tư vấn ngay",
                 mTitle: "Đăng ký tư vấn", mSub: "Phản hồi trong 24h", pName: "Họ và tên *", pPhone: "Số điện thoại *",
                 services: ["Đào tạo Rope Access", "Đào tạo Cứu hộ", "Tư vấn Kỹ thuật"], btnSend: "GỬI YÊU CẦU", success: "Thành công!"
             },
@@ -125,4 +132,56 @@
             },
             km: {
                 desc: "គេហទំព័ររបស់យើងកំពុងត្រូវបានកែលម្អ។ Iron Land នឹងត្រលប់មកវិញឆាប់ៗនេះ ជាមួយនឹងវគ្គបណ្តុះបណ្តាល Rope Access និង Rescue កម្រិតស្តង់ដារអន្តរជាតិ។",
-                status: "កំពុងកែលម្អប្រព័ន្ធ", addr:
+                status: "កំពុងកែលម្អប្រព័ន្ធ", addr: "ទីតាំងបណ្តុះបណ្តាល", addrVal: "ផ្លូវ ៤៥ ង្វៀនធីដន, គូជី, ហូជីមិញ",
+                hotline: "លេខទូរស័ព្ទ", email: "អ៊ីមែល", legal: "ច្បាប់", cta: "ចុះឈ្មោះពិគ្រោះយោបល់",
+                mTitle: "ពាក្យសុំពិគ្រោះយោបល់", mSub: "ឆ្លើយតបក្នុងរយៈពេល ២៤ ម៉ោង", pName: "ឈ្មោះពេញ *", pPhone: "លេខទូរស័ព្ទ *",
+                services: ["ការបណ្តុះបណ្តាល Rope Access", "ការបណ្តុះបណ្តាលការសង្គ្រោះ", "សេវាកម្មប្រឹក្សាបច្ចេកទេស"], btnSend: "បញ្ជូន", success: "ជោគជ័យ!"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('body-tag').setAttribute('lang', lang);
+            document.getElementById('description').innerText = t.desc;
+            document.getElementById('status-text').innerText = t.status;
+            document.getElementById('label-address').innerText = t.addr;
+            document.getElementById('val-address').innerText = t.addrVal;
+            document.getElementById('label-hotline').innerText = t.hotline;
+            document.getElementById('label-email').innerText = t.email;
+            document.getElementById('label-legal').innerText = t.legal;
+            document.getElementById('btn-cta').innerText = t.cta;
+            document.getElementById('modal-title').innerText = t.mTitle;
+            document.getElementById('modal-subtitle').innerText = t.mSub;
+            document.getElementById('form-name').placeholder = t.pName;
+            document.getElementById('form-phone').placeholder = t.pPhone;
+            document.getElementById('submit-btn').innerText = t.btnSend;
+            const s = document.getElementById('form-service'); s.innerHTML = '';
+            t.services.forEach(item => { const o = document.createElement('option'); o.value = item; o.innerText = item; s.appendChild(o); });
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            localStorage.setItem('ironland_lang_pref', lang);
+        }
+
+        function toggleModal() { const m = document.getElementById('contactModal'); m.classList.toggle('active'); document.body.style.overflow = m.classList.contains('active') ? 'hidden' : ''; }
+
+        async function handleSubmit(e) {
+            e.preventDefault(); const l = localStorage.getItem('ironland_lang_pref') || 'vi';
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const msg = `🔔 *NEW LEAD (${l.toUpperCase()})*\n👤 Khách: ${name}\n📞 SĐT: ${phone}\n🛠 Dịch vụ: ${service}`;
+            const btn = document.getElementById('submit-btn'); btn.innerText = "..."; btn.disabled = true;
+            try { 
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: msg, parse_mode: 'Markdown' }) }); 
+                alert(translations[l].success); toggleModal(); e.target.reset(); 
+            } catch (err) { alert("Lỗi!"); } finally { btn.innerText = translations[l].btnSend; btn.disabled = false; }
+        }
+
+        // Tự động chạy khi mở trang
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('ironland_lang_pref') || 'vi';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
